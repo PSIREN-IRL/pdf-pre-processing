@@ -57,16 +57,16 @@ def preprocess_image(image_path):
 
 
     # --- Option 2: Just Dilation (for thickening faint text) ---
-    iterations_dilate = 2  # Start with 1 iteration for dilation, experiment with 0, 2, etc.
-    iterations_erode = 0   # No erosion in this option
+    #iterations_dilate = 2  # Start with 1 iteration for dilation, experiment with 0, 2, etc.
+    #iterations_erode = 0   # No erosion in this option
 
-    dilated_img = cv2.dilate(gray_img, kernel, iterations=iterations_dilate)
-    img = dilated_img # Use the dilated image for further processing
+    #dilated_img = cv2.dilate(gray_img, kernel, iterations=iterations_dilate)
+    #img = dilated_img # Use the dilated image for further processing
 
 
     # --- Option 3: No Dilation/Erosion (Baseline - use if D/E is not helpful) ---
-    # img = gray_img # Use grayscale image directly - comment out Dilation/Erosion sections above
-    # pass # Use 'pass' to skip dilation and erosion
+    img = gray_img # Use grayscale image directly - comment out Dilation/Erosion sections above
+    pass # Use 'pass' to skip dilation and erosion
 
 
     # Apply Gaussian blur (after dilation and erosion, or directly on grayscale if D/E is skipped)
